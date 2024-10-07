@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/LoanApplication/Service Descriptors/LoanEligibilityCheck.json",
+        "conversionType": "generated",
+        "xsdSchemaTargetNamespace": "/T1727155425786Converted/JsonSchema"
+    },
+    {
+        "jsonSchemaLocation": "/LoanApplication/Service Descriptors/CheckCreditScore.json",
+        "conversionType": "generated",
+        "xsdSchemaTargetNamespace": "/T1727661617109Converted/JsonSchema"
+    }
+]}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="/T1727661617109Converted/JsonSchema" xmlns:tns="/T1727661617109Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="CheckCreditScoreResponse_creditScore" type="tns:CheckCreditScoreResponse_creditScore"/>
+    <xs:simpleType name="CheckCreditScoreResponse_creditScore">
+        <xs:restriction base="xs:integer"/>
+    </xs:simpleType>
+    <xs:element name="CheckCreditScoreResponse" type="tns:CheckCreditScoreResponse"/>
+    <xs:complexType name="CheckCreditScoreResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="creditScore" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

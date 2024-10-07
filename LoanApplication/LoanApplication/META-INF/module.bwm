@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:property="http://ns.tibco.com/bw/property" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_b8fAEHoyEe--vdnJ1JPEuw" targetNamespace="http://tns.tibco.com/bw/composite/LoanApplication" name="LoanApplication" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_LLY6Eno1Ee--vdnJ1JPEuw" name="checkLoanEligibility" promote="ComponentProcess/checkLoanEligibility">
+    <sca:interface.wsdl xmi:id="_LLscEHo1Ee--vdnJ1JPEuw" interface="http://xmlns.example.com/20240924103425PLT#wsdl.interface(checkLoanEligibility)" scaext:wsdlLocation="../Processes/loanapplication/Process.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_LL_XAHo1Ee--vdnJ1JPEuw" name="RestService" path="/checkLoanEligibility" docBasePath="http://localhost:7777/LoanApplication" docResourcePath="CheckLoanEligibility" basePath="/" connector="loanapplication.Process" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/LoanEligibilityCheck.json">
+      <operation xmi:id="_LMJIAXo1Ee--vdnJ1JPEuw" operationName="get" nickname="getCheckLoanEligibility" httpMethod="GET" responseStyle="element" outputPartName="item">
+        <parameters xmi:id="_LO12sXo1Ee--vdnJ1JPEuw">
+          <parameterMapping xmi:id="_LO12sno1Ee--vdnJ1JPEuw" parameterName="CRN" parameterType="Query" dataType="string" required="true" description="Customer Reference Number"/>
+          <parameterMapping xmi:id="_LO12s3o1Ee--vdnJ1JPEuw" parameterName="loanType" parameterType="Query" dataType="string" required="true" description="Type of loan to check for eligibility"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+      </operation>
+      <parameters xmi:id="_LO12sHo1Ee--vdnJ1JPEuw"/>
+      <advancedConfig xmi:id="_LMJIAHo1Ee--vdnJ1JPEuw" blockingQueueSize="8192"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_LMJIAno1Ee--vdnJ1JPEuw" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_gwjMAHoyEe--vdnJ1JPEuw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gw2G8HoyEe--vdnJ1JPEuw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gw_38HoyEe--vdnJ1JPEuw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gxK3EHoyEe--vdnJ1JPEuw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gxTZ8HoyEe--vdnJ1JPEuw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_gxdK8HoyEe--vdnJ1JPEuw" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_gxiqgHoyEe--vdnJ1JPEuw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_QJoMUH8wEe-sR8hGVyvEaA" name="/CreditScoreService/host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_S7uggH8wEe-sR8hGVyvEaA" name="/CreditScoreService/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_S90yQH8wEe-sR8hGVyvEaA" name="/CreditScoreService/resourcePath" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2EiCYH-VEe-ZIvIWUtWgkQ" name="/CreditScoreService/defaultConfidentiality" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_gXIsYH-WEe-ZIvIWUtWgkQ" name="/Database/dbURL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_iZnhgH-WEe-ZIvIWUtWgkQ" name="/Database/dbUsername" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ibRHUH-WEe-ZIvIWUtWgkQ" name="/Database/dbPassword" type="property:password" scaext:simpleValue="#!leSP9+7yX3IT4mpN5qxKWA==" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_e0hkMHoyEe--vdnJ1JPEuw" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_e0l1oHoyEe--vdnJ1JPEuw" processName="loanapplication.CheckLoanEligibility"/>
+    <sca:service xmi:id="_LLY6EHo1Ee--vdnJ1JPEuw" name="checkLoanEligibility">
+      <sca:interface.wsdl xmi:id="_LLY6EXo1Ee--vdnJ1JPEuw" interface="http://xmlns.example.com/20240924103425PLT#wsdl.interface(checkLoanEligibility)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

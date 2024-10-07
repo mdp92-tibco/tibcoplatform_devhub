@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:subject="http://xsd.tns.tibco.com/trinity/models/identity/subject" xmi:id="_EcVLoXo2Ee--vdnJ1JPEuw" name="loanapplication.JDBCConnectionResource" type="jdbc:JdbcDataSource">
+  <jndi:reference xmi:id="_EgxmwHo2Ee--vdnJ1JPEuw" key="subjectJndiName" type="subject:SubjectConfiguration" value=""/>
+  <jndi:configuration xsi:type="jdbc:JdbcDataSource" xmi:id="_EgxmwXo2Ee--vdnJ1JPEuw">
+    <substitutionBindings xmi:id="_2l7p0H-WEe-ZIvIWUtWgkQ" template="username" propName="/Database/dbUsername"/>
+    <substitutionBindings xmi:id="_23ZNQH-WEe-ZIvIWUtWgkQ" template="password" propName="/Database/dbPassword"/>
+    <connectionConfig xsi:type="jdbc:NonXaConnection" xmi:id="_Eg1RIHo2Ee--vdnJ1JPEuw" jdbcDriver="org.postgresql.Driver">
+      <substitutionBindings xmi:id="_4Wb-IH-WEe-ZIvIWUtWgkQ" template="dbURL" propName="/Database/dbURL"/>
+    </connectionConfig>
+  </jndi:configuration>
+</jndi:namedResource>

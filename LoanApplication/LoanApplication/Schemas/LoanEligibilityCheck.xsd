@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="/T1727155425786Converted/JsonSchema" xmlns:tns="/T1727155425786Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="LoanEligibilityCheckResponse" type="tns:LoanEligibilityCheckResponse"/>
+    <xs:complexType name="LoanEligibilityCheckResponse">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="eligibility" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="eligibleLoanAmount" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="LoanEligibilityCheckResponse_eligibleLoanAmount" type="tns:LoanEligibilityCheckResponse_eligibleLoanAmount"/>
+    <xs:simpleType name="LoanEligibilityCheckResponse_eligibleLoanAmount">
+        <xs:restriction base="xs:integer"/>
+    </xs:simpleType>
+    <xs:element name="LoanEligibilityCheckResponse_eligibility" type="tns:LoanEligibilityCheckResponse_eligibility"/>
+    <xs:simpleType name="LoanEligibilityCheckResponse_eligibility">
+        <xs:restriction base="xs:boolean"/>
+    </xs:simpleType>
+</xs:schema>

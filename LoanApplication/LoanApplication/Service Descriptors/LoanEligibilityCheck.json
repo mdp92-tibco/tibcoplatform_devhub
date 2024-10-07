@@ -1,0 +1,65 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "LoanEligibilityCheck",
+    "x-lastModified": "24 September 2024 10:46:21 am (India Standard Time)"
+  },
+  "paths": {
+    "/checkLoanEligibility": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/LoanEligibilityCheckResponse"
+            },
+            "examples": {
+              "application/json": {
+                "eligibility": true,
+                "eligibleLoanAmount": 2000
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "CRN",
+            "in": "query",
+            "description": "Customer Reference Number",
+            "required": true,
+            "type": "string",
+            "format": ""
+          },
+          {
+            "name": "loanType",
+            "in": "query",
+            "description": "Type of loan to check for eligibility",
+            "required": true,
+            "type": "string",
+            "format": ""
+          }
+        ],
+        "operationId": "getCheckLoanEligibility"
+      }
+    }
+  },
+  "definitions": {
+    "LoanEligibilityCheckResponse": {
+      "type": "object",
+      "properties": {
+        "eligibility": {
+          "type": "boolean",
+          "default": true
+        },
+        "eligibleLoanAmount": {
+          "type": "integer",
+          "default": 2000
+        }
+      }
+    }
+  }
+}

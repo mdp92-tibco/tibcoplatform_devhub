@@ -1,0 +1,52 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "CheckCreditScore",
+    "x-lastModified": "30 September 2024 5:52:43 am (India Standard Time)"
+  },
+  "paths": {
+    "/getCreditScore": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/CheckCreditScoreResponse"
+            },
+            "examples": {
+              "application/json": {
+                "creditScore": 520
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "CRN",
+            "in": "query",
+            "description": "Customer Reference Number",
+            "required": true,
+            "type": "string",
+            "format": ""
+          }
+        ],
+        "operationId": "getGetCreditScore"
+      }
+    }
+  },
+  "definitions": {
+    "CheckCreditScoreResponse": {
+      "type": "object",
+      "properties": {
+        "creditScore": {
+          "type": "integer",
+          "default": 520
+        }
+      }
+    }
+  }
+}
