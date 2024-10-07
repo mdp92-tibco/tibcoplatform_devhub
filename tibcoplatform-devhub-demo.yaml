@@ -1,0 +1,54 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: tibcoplatform-devhub
+  description: A developer hub for TIBCO platform integration tools
+  tags:
+    - developer-portal
+    - tibco
+    - integration
+    - devops
+  annotations:
+    github.com/repo: https://github.com/mdp92-tibco/tibcoplatform_devhub
+    backstage.io/techdocs-ref: url:https://docs.md92-tibco.com/tibcoplatform-devhub
+    kubernetes.io/namespace: tibcoplatform-devhub-namespace
+  labels:
+    team: platform-integration
+    project-type: internal-tool
+    deployment: cloud-native
+    priority: high
+    language: javascript
+spec:
+  type: service
+  lifecycle: production
+  owner: platform-integration-team
+  providesApis:
+    - user-management-api
+    - auth-service-api
+  consumesApis:
+    - external-billing-api
+    - tibco-integration-api
+  dependsOn:
+    - kind: Resource
+      name: postgres-db
+    - kind: Resource
+      name: redis-cache
+  system: tibcoplatform-integration-system
+  links:
+    - url: https://github.com/mdp92-tibco/tibcoplatform_devhub/pulls
+      title: Pull Requests
+    - url: https://mdp92-tibco-jira.com/projects/TPD/issues
+      title: Jira Issues
+    - url: https://mdp92-tibco-monitoring.com/tibcoplatform-devhub
+      title: Monitoring Dashboard
+  resources:
+    - kind: Resource
+      name: tibcoplatform-kubernetes-cluster
+    - kind: Resource
+      name: tibcoplatform-database
+  targets:
+    - url: https://mdp92-tibco-cloud.com/deploy/tibcoplatform-devhub
+      title: Deployment URL
+  status: active
+  owner: tibco-platform-team
+
